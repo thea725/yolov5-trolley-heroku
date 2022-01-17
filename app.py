@@ -82,7 +82,7 @@ class VideoTransformer(VideoTransformerBase):
 # ---------------------------------------------------
 
 with st.spinner('Loading the model...'):
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/best.pt', force_reload=True).autoshape() # local model
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/best.pt', force_reload=True) # local model
 st.success('Loading the model.. Done!')
 #endregion
 
