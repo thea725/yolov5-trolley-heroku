@@ -8,6 +8,7 @@ import streamlit as st
 import matplotlib.colors as mcolors
 from PIL import Image
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
+from surprise import Reader, Dataset, SVD
 
 from config import CLASSES, WEBRTC_CLIENT_SETTINGS
 
@@ -165,7 +166,6 @@ st.dataframe(legend_df.style.applymap(get_legend_color))
 ################################################################
 #Prediction berdasarkan legend_df
 ################################################################
-from surprise import Reader, Dataset, SVD
 jumlah = []
 for item in CLASSES:
     jumlah.append((legend_df['label']==item).sum())
